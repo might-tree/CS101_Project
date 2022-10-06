@@ -85,7 +85,7 @@ int permut(char key[], int noOfChars, char ciphertext[], char alph[]){
                 else{       //If special character
                     if(cipword=="")
                         continue;
-                    ifstream dict("D:\\IITB\\Sem 2\\CS101\\Project\\Decoding-Project\\examples\\dictionary.txt");
+                    ifstream dict("<file_path>");
                     if(!dict){
                         cout<<"Cannot open file";
                         return 1;
@@ -153,7 +153,7 @@ int permut(char key[], int noOfChars, char ciphertext[], char alph[]){
 int main(){
 
     //counting number of characters in text file for array initialisation
-    ifstream txtFile("D:\\IITB\\Sem 2\\CS101\\Project\\Decoding-Project\\test-cases\\in\\test-0-in.txt");
+    ifstream txtFile("<file_path>");
     int noOfChars=0;
     while(1)
     {
@@ -166,7 +166,7 @@ int main(){
     char ciphertext[noOfChars+1];
 
     //Reading ciphertext from file and storing it in array
-    ifstream in("D:\\IITB\\Sem 2\\CS101\\Project\\Decoding-Project\\test-cases\\in\\test-0-in.txt");
+    ifstream in("<file_path>");
     if(! in)
     {
         cout<<"Cannot open input file\n";
@@ -228,7 +228,7 @@ int main(){
                 else{       //If special character
                     if(cipword=="")
                         continue;
-                    ifstream dict("D:\\IITB\\Sem 2\\CS101\\Project\\Decoding-Project\\examples\\dictionary.txt");
+                    ifstream dict("<dictionary_path>");
                     if(!dict){
                         cout<<"Cannot open file";
                         return 1;
@@ -331,7 +331,7 @@ int main(){
                 else{       //If special character
                     if(cipword=="")
                         continue;
-                    ifstream dict("D:\\IITB\\Sem 2\\CS101\\Project\\Decoding-Project\\examples\\dictionary.txt");
+                    ifstream dict("<dictionary_path>");
                     if(!dict){
                         cout<<"Cannot open file";
                         return 1;
@@ -402,57 +402,3 @@ int main(){
 }
 
 
-
-/*if(uniqueCount==0){     //If all words have many matches
-                        for(int j=0;j<26;j++){
-                            char key2[26]={matches[j][0],matches[j][1],matches[j][2],matches[j][3],matches[j][4],matches[j][5]};
-                            int temp=key2[5]-96;
-                            for(int jj=6;jj<26;jj++,temp++){
-                                if(temp==26)
-                                    temp=0;
-                                while(existInString(matches[j],(char)(temp+65))==1){
-                                    temp++;
-                                    if(temp==26)
-                                        temp=0;
-                                }
-                                key2[jj]=(char)(temp+97);
-                            }
-                    string word2;
-                    string cipt2="";
-                for(int counter=0;counter<=noOfChars;counter++){
-                int cu=0;
-                if(isalpha(ciph2[counter])!=0&&ciph2[counter-1]!='\\')      //Extracting word from ciphertext
-                    cipt2+=ciph2[counter];
-                else{       //If special character
-                    if(cipt2=="")
-                        continue;
-                        ifstream dict2("D:\\IITB\\Sem 2\\CS101\\Project\\Decoding-Project\\examples\\dictionary.txt");
-                    if(!dict2){
-                        cout<<"Cannot open file";
-                        return 1;
-                    }
-                    while(dict2>>word2){
-
-                    //cout<<word<<endl;
-                        if(isdigit(word2[0])!=0)        //If picked up NULL word or digits
-                            continue;
-                        //cout<<cipword<<" "<<word<<endl;
-                        for(int g=0;g<word2.length();g++){
-                            if()
-                        }
-                    }
-                    }
-
-                        }*/
-
-
-
-                        /*for(int j=0;j<26;j++)
-                            key2[j]=key[j];
-                        for(int j=0;j<cu;j++){
-                            string w=matches[j];
-                            for(int jj=0;jj<w.length();jj++){
-                                if(word[jj]>='a'&&word[jj]<='z')
-                                    key[matches[j][jj]-65]=cipword[jj];//key[w[jj]-65]=w[]
-                            }
-                        }*/
